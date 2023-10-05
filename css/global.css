@@ -1,0 +1,217 @@
+:root {
+  --general-bg: #FFF9F4;
+  --general-text: #312C27;
+  --accent-color: #FFA55C;
+  --accent-color-2: #CEAAD0;
+  --input-color: #AC907A;
+  --accent-bg: #FFE0CB;
+  --accent-text: #1F1711;
+  --accent-transition: all .4s;
+  --accent-border-radius: 20px
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+.body {
+  line-height: 1.5;
+  color: var(--general-text);
+  font-family: "Montserrat", "arial", sans-serif;
+  background-color: var(--general-bg);
+}
+
+.body--opened-menu {
+  overflow: hidden;
+}
+
+.body--opened-modal {
+  overflow: hidden;
+}
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+  z-index: 1;
+}
+
+.main__about {
+  margin: 140px 0;
+}
+
+.main__program,
+.main__gallery,
+.main__testimonials {
+  padding-bottom: 145px;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.title {
+  font-family: 'Gabriola';
+  font-size: 74px;
+  line-height: .82;
+  color: var(--accent-text);
+}
+
+.button {
+  line-height: 1.6;
+  font-weight: 500;
+  height: 62px;
+  background: var(--accent-color);
+  border-radius: 60px;
+  font-size: 16px;
+  width: 100%;
+  transition: var(--accent-transition);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background: #FF9138;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #0000003f;
+  z-index: 10;
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+}
+
+.body--opened-modal .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__window {
+  background: var(--general-bg);
+  border-radius: var(--accent-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 0 60px 60px;
+  max-width: 428px;
+}
+
+.modal__cancel {
+  position: absolute;
+  right: 4%;
+  top: 4%;
+}
+
+.modal__cancel svg {
+  pointer-events: none;
+}
+
+.modal__cancel path, rect {
+  transition: var(--accent-transition);
+}
+
+.modal__cancel:hover path,
+.modal__cancel:hover rect {
+  stroke: var(--input-color);
+}
+
+.modal__img {
+  margin: -65px 0 15px -30px;
+  width: 100%;
+}
+
+.modal__img img {
+  width: 100%;
+}
+
+.modal__title {
+  font-family: 'Gabriola';
+  font-size: 42px;
+  line-height: .9;
+  margin-bottom: 10px;
+}
+
+.modal__text {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.modal__form {
+  width: 100%;
+}
+
+.modal__form-label {
+  margin-bottom: 10px;
+}
+
+.field {
+  position: relative;
+  display: flex;
+}
+
+.field span {
+  position: absolute;
+  top: 12px;
+  left: 28px;
+  font-size: 11px;
+  color: var(--input-color);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--accent-transition);
+}
+
+.field__input {
+  padding: 19px 42px 19px 28px;
+  border-radius: 100px;
+  border: 1px solid var(--input-color);
+  width: 100%;
+  transition: var(--accent-transition);
+  font-size: 16px;
+  background: transparent;
+}
+
+.field__input::placeholder {
+  transition: var(--accent-transition);
+  color: var(--input-color);
+}
+
+.field__input:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.field__input:focus {
+  border: 1px solid var(--accent-color);
+  padding: 26px 42px 12px 28px;
+}
+
+.field__input:focus+span {
+  opacity: 1;
+  visibility: visible;
+}
+
+.field__input:hover::placeholder {
+  color: var(--accent-color);
+}
