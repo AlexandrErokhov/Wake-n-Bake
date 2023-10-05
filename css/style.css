@@ -1,9 +1,9 @@
-@import "../css/fonts.css";
-@import "../css/reset.css";
-@import "../css/global.css";
+@import "./fonts.css";
+@import "./reset.css";
+@import "./global.css";
 
-@import "../css/header.css";
-@import "../css/footer.css";
+@import "./header.css";
+@import "./footer.css";
 
 .about__inner {
   display: grid;
